@@ -1,0 +1,13 @@
+# /etc/systemd/system/xmrstakamd.service
+[Unit]
+Description=XMR AMD GPU Miner
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/run/xmrstakamd.pid
+ExecStart=/opt/xmrstakamd/start-xmrstakamd.sh
+ExecReload=/sbin/start-stop-daemon
+
+[Install]
+WantedBy=multi-user.target
